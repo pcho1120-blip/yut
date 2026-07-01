@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unhinged Joke AI</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="stage" aria-labelledby="app-title">
+        <div class="brand-row">
+          <span class="signal-dot" aria-hidden="true"></span>
+          <span>OpenRouter joke console</span>
+        </div>
+
+        <div class="hero-grid">
+          <div class="intro">
+            <p class="eyebrow">병맛 농담 자동 투척기</p>
+            <h1 id="app-title">오늘의 정신 나간 농담을 제조합니다</h1>
+            <p class="summary">
+              컨셉을 고르고 강도를 올리면 AI가 짧고 이상한 한국어 농담을 던집니다.
+            </p>
+          </div>
+
+          <form id="joke-form" class="control-panel">
+            <fieldset>
+              <legend>컨셉</legend>
+              <div class="style-grid">
+                <label>
+                  <input type="radio" name="style" value="office" checked />
+                  <span>회사원 현타</span>
+                </label>
+                <label>
+                  <input type="radio" name="style" value="food" />
+                  <span>음식 아무말</span>
+                </label>
+                <label>
+                  <input type="radio" name="style" value="animal" />
+                  <span>동물 의인화</span>
+                </label>
+                <label>
+                  <input type="radio" name="style" value="dev" />
+                  <span>개발자 자학</span>
+                </label>
+                <label>
+                  <input type="radio" name="style" value="romance" />
+                  <span>연애 망상</span>
+                </label>
+                <label>
+                  <input type="radio" name="style" value="random" />
+                  <span>완전 랜덤</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <label class="field">
+              <span>넣고 싶은 소재</span>
+              <input
+                id="topic"
+                name="topic"
+                maxlength="80"
+                placeholder="예: 금요일 회의, 식은 치킨, 배포 직전"
+              />
+            </label>
+
+            <label class="field">
+              <span>병맛 강도 <strong id="intensity-value">3</strong></span>
+              <input
+                id="intensity"
+                name="intensity"
+                type="range"
+                min="1"
+                max="5"
+                value="3"
+              />
+            </label>
+
+            <button id="submit-button" type="submit">
+              <span class="button-icon" aria-hidden="true">↯</span>
+              농담 투척
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="result-zone" aria-live="polite">
+        <div class="mood-board">
+          <span>회의실</span>
+          <span>냉장고</span>
+          <span>콘솔</span>
+          <span>읽씹</span>
+          <span>야식</span>
+          <span>배포</span>
+        </div>
+        <article class="joke-card">
+          <p id="status">컨셉을 고르고 버튼을 누르면 농담이 나타납니다.</p>
+          <p id="joke-output">아직 조용합니다. 이 고요함이 제일 수상합니다.</p>
+        </article>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
