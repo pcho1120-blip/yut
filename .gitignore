@@ -7,3 +7,5 @@ dist
 *.log
 NEXT_CHAT_HANDOFF.md
 PROJECT_HANDOFF.md
+
+.vercel
